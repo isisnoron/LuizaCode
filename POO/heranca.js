@@ -18,6 +18,17 @@ class Pessoa {
       console.log('esta pessoa pode beber');
     }
   }
+
+  //exercício 1
+  verificaEndereco(endereco) {
+    if (endereco) {
+      return `O endereço dessa pessoa é: ${endereco}`;
+    } else {
+      return `Essa pessoa não possui endereço cadastrado.`;
+    }
+  }
+
+
 }
 
 class Pfisica extends Pessoa {
@@ -26,13 +37,16 @@ class Pfisica extends Pessoa {
     this.cpf = cpf;
   }
 
-  tirarCpf() {
-    // ...
+    // segundo exercício
+  setProfissao(profissao) {
+    return `Profissão: ${profissao}.`;
   }
 }
 
 let pessoa = new Pfisica('Maria', 'Ribeiro', '11154545471');
-console.log(pessoa.verificaMaioridade(20));
+//console.log(pessoa.verificaMaioridade(20));
+console.log(pessoa.verificaEndereco('Alameda das Orquídeas, 345'));
+console.log(pessoa.setProfissao('Desenvolvedora'))
 
 class PJuridica extends Pessoa {
   constructor(nome, sobrenome, cnpj) {
@@ -43,6 +57,7 @@ class PJuridica extends Pessoa {
 
 let empresa = new PJuridica('Magalu', 'LTDA', '121321321/0001-10');
 console.log(empresa);
+console.log(empresa.verificaEndereco());
 
 class PJuridica2 extends Pessoa {
   constructor(nome, sobrenome) {
@@ -56,8 +71,16 @@ class PJuridica2 extends Pessoa {
   getCnpj() {
     return this.cnpj;
   }
+
+  // segundo exercício
+  setTelefone(telefone) {
+    return `Telefone: ${telefone}.`;
+  }
+
 }
 
 empresa = new PJuridica2('Magalu', 'LTDA');
 empresa.setCnpj('121213212/0001-10');
 console.log(empresa.getCnpj());
+console.log(empresa.verificaEndereco('Rua das Ostras, 27'));
+console.log(empresa.setTelefone('3334-9238'));
