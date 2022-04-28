@@ -3,25 +3,23 @@
  * Exercicio 1 - Quero que vocês pesquisem sobre modos de encapsular atributos (#) e tente fazer isso na Pessoa
  */
 class Pessoa {
-  constructor(idade) {
-    this.idade = idade;
-  }
+  #idade 
 
-  atribuiIdade(idade) {
-    this.idade = idade;  
+  constructor(idade) {
+    this.#idade = idade;
   }
 
   _verificaIdade() {
-    if (this.idade > 18) {
+    if (this.#idade > 18) {
       console.log('Maior de Idade');
     } else {
-      console.log('Menor de Idade')
+      console.log('Menor de Idade', 1)
     }
   }
 }
 
 let pessoa = new Pessoa(15);
-console.log(pessoa._verificaIdade());
+console.log(pessoa._verificaIdade(), 2);
 
 //SEM Encapsular
 // const idade = 34;
